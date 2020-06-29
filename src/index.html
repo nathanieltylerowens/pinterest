@@ -7,11 +7,22 @@
   <title>PINterest?</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">PINterest</a>
-        <form class="form-inline">
-          <div id="auth"></div>
-        </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="#">Pin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li>
+              <div id="auth" class="hide"></div>
+              <button class="btn btn-outline-danger" id="navbar-logout-button">Logout!</button>
+            </li>
+          </ul>
+        </div>
       </nav>
+<div id="boards" class="hide">Boards</div>
+
 </body>
 </html>
