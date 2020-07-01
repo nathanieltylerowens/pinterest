@@ -4,7 +4,7 @@ import utils from '../../helpers/utils';
 const buildPins = (e) => {
   const boardType = e.target.id;
   let domString = '';
-  pinData.buildPins()
+  pinData.buildPins(e)
     .then((pins) => {
       pins.forEach((pin) => {
         if (pin.board === boardType) {
@@ -14,7 +14,7 @@ const buildPins = (e) => {
             <div class="card-body">
               <h5 class="card-title">${pin.title}</h5>
                 <p class="card-text">${pin.article}</p>
-                <a href="#" class="btn btn-outline-warning"><i class="fas fa-trash-alt"></i></a>
+                <button id="${pin.id}" class="btn btn-outline-warning delete-pin"><i class="fas fa-trash-alt"></i></button>
             </div>
           </div>
           `;
