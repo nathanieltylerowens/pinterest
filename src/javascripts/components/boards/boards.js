@@ -5,7 +5,7 @@ const buildBoards = () => {
   boardsData.getBoards()
     .then((boards) => {
       let domString = `
-      <h1 class="text-center">Boards</h1>
+      <h3 class="text-center">Boards</h3>
       <div class="d-flex justify-content-center" id="boardsContainer">
       `;
       boards.forEach((board) => {
