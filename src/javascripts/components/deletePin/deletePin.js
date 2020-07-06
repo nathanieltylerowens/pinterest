@@ -3,7 +3,6 @@ import pinData from '../../helpers/data/pinData';
 
 const removePinEvent = (e) => {
   const pinCardId = (e.target.closest('.card').id);
-
   pinData.deletePin(pinCardId)
     .then(() => {
       pins.buildPins(e);

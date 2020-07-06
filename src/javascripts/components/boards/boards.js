@@ -10,6 +10,7 @@ const buildBoards = () => {
       `;
       boards.forEach((board) => {
         domString += `<button class="btn btn-danger boardsbtn" id="${board.id}">${board.title}</button>`;
+        domString += `<button class="btn btn-danger delete-board" id="${board.id}">Delete ${board.title}</button>`;
       });
 
       domString += '</div>';
