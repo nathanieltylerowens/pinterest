@@ -1,6 +1,7 @@
 import pins from '../components/pins/pins';
 import utils from './utils';
 import deletePin from '../components/deletePin/deletePin';
+import deleteBoard from '../deleteBoard/deleteBoard';
 
 const boardClick = (e) => {
   pins.buildPins(e);
@@ -16,10 +17,15 @@ const deletePinEvent = (e) => {
   deletePin.removePinEvent(e);
 };
 
+const deleteBoardEvent = (e) => {
+  deleteBoard.removeBoard(e);
+};
+
 const clickEvents = () => {
   $('body').on('click', '.boardsbtn', boardClick);
   $('body').on('click', '.home-btn', homeBoards);
   $('body').on('click', '.delete-pin', deletePinEvent);
+  $('body').on('click', '.delete-board', deleteBoardEvent);
 };
 
 export default { clickEvents };
