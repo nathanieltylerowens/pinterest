@@ -2,6 +2,7 @@ import pins from '../components/pins/pins';
 import utils from './utils';
 import deletePin from '../components/deletePin/deletePin';
 import deleteBoard from '../deleteBoard/deleteBoard';
+import boards from '../components/boards/boards';
 
 const boardClick = (e) => {
   pins.buildPins(e);
@@ -19,6 +20,7 @@ const deletePinEvent = (e) => {
 
 const deleteBoardEvent = (e) => {
   deleteBoard.removeBoard(e);
+  boards.buildBoards(e);
 };
 
 const clickEvents = () => {

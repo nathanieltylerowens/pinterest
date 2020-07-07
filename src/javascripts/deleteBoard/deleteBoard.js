@@ -1,18 +1,13 @@
 import boardData from '../helpers/data/boardsData';
-import pinData from '../helpers/data/pinData';
+import boards from '../components/boards/boards';
 
-const removeBoard = (e) => new Promise((resolve, reject) => {
-  const boardId = e.target.closest('.btn').id;
+const removeBoard = (e) => {
+  const boardId = (e.target.closest('.btn').id);
   boardData.deleteBoard(boardId)
     .then(() => {
-      pinData.pinByBoardId(boardId).then((boardpins) => {
-        boardpins.forEach((pin) => {
-          pinData.deleteBoardPin(pin.board);
-        });
-        resolve();
-      });
+      boards.buildBoards(e);
     })
-    .catch((err) => reject(err));
-});
+    .catch((err) => console.error('no delete board', err));
+};
 
 export default { removeBoard };
