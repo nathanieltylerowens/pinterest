@@ -1,6 +1,18 @@
 import pinData from '../../helpers/data/pinData';
 import utils from '../../helpers/utils';
+// import newPinForm from '../newPin/newPin';
 
+const addPin = (e) => {
+  e.preventDefault();
+
+  const newPin = {
+    title: $('#newPinTitle').val(),
+    photo: $('#newPinImage').val(),
+    article: $('#newPinText').val(),
+    board: $('#newPinBoard').val(),
+  };
+  console.error(newPin);
+};
 const buildPins = (e) => {
   const boardType = e.target.id;
   let domString = '';
@@ -25,4 +37,4 @@ const buildPins = (e) => {
     .catch((err) => console.error('pins broke', err));
 };
 
-export default { buildPins };
+export default { buildPins, addPin };
