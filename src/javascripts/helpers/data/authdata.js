@@ -9,6 +9,7 @@ const boardDiv = $('#boards');
 const logoutButton = $('#navbar-logout-button');
 const userDiv = $('#users');
 const pinDiv = $('#pins');
+const newPinDiv = $('#new-pin');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -18,6 +19,7 @@ const checkLoginStatus = () => {
       logoutButton.removeClass('hide');
       userDiv.removeClass('hide');
       pinDiv.removeClass('hide');
+      newPinDiv.removeClass('hide');
 
       boardList.buildBoards();
       userList.buildUsers();
@@ -27,6 +29,7 @@ const checkLoginStatus = () => {
       logoutButton.addClass('hide');
       userDiv.addClass('hide');
       pinDiv.addClass('hide');
+      newPinDiv.addClass('hide');
     }
   });
 };

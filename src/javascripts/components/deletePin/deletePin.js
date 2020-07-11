@@ -5,7 +5,7 @@ const removePinEvent = (e) => {
   const pinCardId = (e.target.closest('.card').id);
   pinData.deletePin(pinCardId)
     .then(() => {
-      pins.buildPins(e);
+      pins.buildPins(e.target.id);
     })
     .catch((err) => console.error('no delete pin', err));
 };

@@ -1,11 +1,27 @@
 import pinData from '../../helpers/data/pinData';
 import utils from '../../helpers/utils';
 
-const buildPins = (e) => {
-  const boardType = e.target.id;
+const addPin = (e) => {
+  e.preventDefault();
+  const pinBoardId = $('.btn-success').data('boardid');
+
+  const newPin = {
+    title: $('#newPinTitle').val(),
+    photo: $('#newPinImage').val(),
+    article: $('#newPinText').val(),
+    board: pinBoardId,
+  };
+  pinData.addNewPin(newPin)
+    // eslint-disable-next-line no-use-before-define
+    .then(() => buildPins(pinBoardId))
+    .catch((err) => console.error('new pin broke', err));
+};
+
+const buildPins = (boardType) => {
   let domString = '';
-  pinData.buildPins(e)
+  pinData.buildPins(boardType)
     .then((pins) => {
+      domString += `<button class="btn btn-success" id="show-new-form" data-boardId="${boardType}"><i class="fas fa-plus"></i>  <i class="fas fa-thumbtack"></i></button>`;
       pins.forEach((pin) => {
         if (pin.board === boardType) {
           domString += `
@@ -25,4 +41,9 @@ const buildPins = (e) => {
     .catch((err) => console.error('pins broke', err));
 };
 
-export default { buildPins };
+const displayPinsEvent = (e) => {
+  const selectedBoard = e.target.id;
+  buildPins(selectedBoard);
+};
+
+export default { buildPins, addPin, displayPinsEvent };
