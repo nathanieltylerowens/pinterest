@@ -3,7 +3,7 @@ import utils from '../../helpers/utils';
 
 const addPin = (e) => {
   e.preventDefault();
-  const pinBoardId = $('.btn-success').data('boardid');
+  const pinBoardId = $('#show-new-form').data('boardid');
 
   const newPin = {
     title: $('#newPinTitle').val(),
