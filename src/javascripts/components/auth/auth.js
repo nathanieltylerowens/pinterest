@@ -9,7 +9,7 @@ const signMeIn = () => {
 };
 
 const loginButton = () => {
-  const domstring = '<button id="google-auth" class="d-inline btn btn-outline-danger"><i class="fab fa-google"></i>Login</button>';
+  const domstring = '<button id="google-auth" class="d-inline btn btn-outline-info"><i class="fab fa-google"></i>Login</button>';
 
   utils.printToDom('#auth', domstring);
 

@@ -25,7 +25,7 @@ const updatePinForm = (e) => {
       });
       domString += `
         </select>
-        <button class="btn btn-danger mt-2 selectTheBoard">Move</button>
+        <button class="btn btn-info mt-2 selectTheBoard">Move</button>
       `;
       utils.printToDom(`#${pinId}dropDown`, domString);
     })

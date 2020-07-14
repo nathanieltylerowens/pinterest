@@ -1,8 +1,54 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
+
+$rich-black-fogra-29: #0d1b2aff;
+$oxford-blue: #1b263bff;
+$bdazzled-blue: #415a77ff;
+$shadow-blue: #778da9ff;
+$platinum: #e0e1ddff;
+
 body {
-background-color: papayawhip;
+background-color: $platinum;
+color: $rich-black-fogra-29;
+}
+
+.navbar {
+  background-color: $oxford-blue;
+}
+
+#navbar-logout-button, #auth {
+  color: $shadow-blue;
+  border-color: $shadow-blue;
+}
+
+#hello {
+ color: $shadow-blue;
+ margin: 5px;
+ padding: 0px;
+}
+
+#home-btn{
+  color: $platinum;
+  text-decoration: underline $shadow-blue;
+}
+
+#home-btn:hover {
+  color: $shadow-blue;
+  text-decoration: underline $platinum;
+}
+
+#users {
+  padding: 0;
+}
+#boards button{
+  margin: 10px;
+}
+
+li{
+  padding: 0;
+  margin: 0;
+  display: inline;
 }
 
 .hide{

@@ -1,3 +1,4 @@
+import './users.scss';
 import usersData from '../../helpers/data/userData';
 import utils from '../../helpers/utils';
 
@@ -6,7 +7,7 @@ const buildUsers = () => {
     .then((users) => {
       let domString = '';
       users.forEach((user) => {
-        domString += `<h5>Hello ${user.name}!</h5>`;
+        domString += `<h5 id="hello">Hello ${user.name}!</h5>`;
       });
 
       utils.printToDom('#users', domString);

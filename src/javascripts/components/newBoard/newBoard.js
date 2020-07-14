@@ -11,7 +11,7 @@ const showBoardForm = () => {
       </div>
         <div class="form-group row">
           <div class="col-sm-10">
-            <button type="submit" class="btn btn-success" id="boardCreateBtn">Create Pin</button>
+            <button type="submit" class="btn btn-primary" id="boardCreateBtn">Create Board</button>
           </div>
         </div>
       </form>

@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+
+import './boards.scss';
 import boardsData from '../../helpers/data/boardsData';
 import utils from '../../helpers/utils';
 
@@ -23,11 +25,13 @@ const buildBoards = () => {
       <h3 class="text-center">Boards</h3>
       <div id="new-board" class="hide"></div>
       <div class="d-flex justify-content-center" id="boardsContainer">
-      <button class="btn btn-success" id="new-board-form"><i class="fas fa-plus"></i>  <i class="fas fa-clipboard"></i></button>
+      <button class="btn btn-primary" id="new-board-form"><i class="fas fa-plus"></i>  <i class="fas fa-clipboard"></i></button>
       `;
       boards.forEach((board) => {
-        domString += `<button class="btn btn-danger boardsbtn" id="${board.id}">${board.title}</button>`;
-        domString += `<button class="btn btn-danger delete-board" id="${board.id}">Delete ${board.title}</button>`;
+        domString += `
+          <button class="btn btn-info boardsbtn" id="${board.id}">${board.title}</button>
+          <button class="btn btn-secondary delete-board" id="${board.id}">Delete ${board.title}</button>
+        `;
       });
 
       domString += '</div>';
