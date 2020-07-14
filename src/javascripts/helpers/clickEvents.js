@@ -5,6 +5,7 @@ import deleteBoard from '../deleteBoard/deleteBoard';
 import pinForm from '../components/newPin/newPin';
 import boardForm from '../components/newBoard/newBoard';
 import boards from '../components/boards/boards';
+import update from '../components/updatePin/updatePin';
 
 const boardClick = (e) => {
   pins.displayPinsEvent(e);
@@ -27,9 +28,11 @@ const deletePinEvent = (e) => {
 const deleteBoardEvent = (e) => {
   deleteBoard.removeBoard(e);
 };
+
 const pinFormEvent = (e) => {
   pinForm.showForm(e);
 };
+
 const addPinEvent = (e) => {
   pins.addPin(e);
   utils.clearDom('#new-pin');
@@ -43,6 +46,15 @@ const boardFormEvent = (e) => {
 const addBoardEvent = (e) => {
   boards.addBoard(e);
 };
+
+const updatePinFormEvent = (e) => {
+  update.updatePinForm(e);
+};
+
+const movePin = (e) => {
+  update.updatePin(e);
+};
+
 const clickEvents = () => {
   $('body').on('click', '.boardsbtn', boardClick);
   $('body').on('click', '.home-btn', homeBoards);
@@ -52,6 +64,8 @@ const clickEvents = () => {
   $('body').on('click', '#pinCreateBtn', addPinEvent);
   $('body').on('click', '#new-board-form', boardFormEvent);
   $('body').on('click', '#boardCreateBtn', addBoardEvent);
+  $('body').on('click', '.move-pin', updatePinFormEvent);
+  $('body').on('click', '.selectTheBoard', movePin);
 };
 
 export default { clickEvents };
