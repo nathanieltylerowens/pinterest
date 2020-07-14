@@ -29,8 +29,10 @@ const buildPins = (boardType) => {
             <img class="card-img-top" src="${pin.photo}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">${pin.title}</h5>
-                <p class="card-text">${pin.article}</p>
-                <button id="${pin.board}" class="btn btn-outline-warning delete-pin"><i class="fas fa-trash-alt"></i></button>
+              <p class="card-text">${pin.article}</p>
+              <button id="${pin.board}" class="btn btn-outline-warning delete-pin"><i class="fas fa-trash-alt"></i></button>
+              <button class="btn btn-outline-warning move-pin"><i class="fas fa-people-carry" data-board="${pin.boardId}"></i></button>
+              <div id="${pin.id}dropDown"></div>
             </div>
           </div>
           `;
