@@ -1,3 +1,4 @@
+import './pins.scss';
 import pinData from '../../helpers/data/pinData';
 import utils from '../../helpers/utils';
 
@@ -21,7 +22,7 @@ const buildPins = (boardType) => {
   let domString = '';
   pinData.buildPins(boardType)
     .then((pins) => {
-      domString += `<button class="btn btn-success" id="show-new-form" data-boardId="${boardType}"><i class="fas fa-plus"></i>  <i class="fas fa-thumbtack"></i></button>`;
+      domString += `<button class="btn btn-primary" id="show-new-form" data-boardId="${boardType}"><i class="fas fa-plus"></i>  <i class="fas fa-thumbtack"></i></button>`;
       pins.forEach((pin) => {
         if (pin.board === boardType) {
           domString += `
@@ -30,8 +31,8 @@ const buildPins = (boardType) => {
             <div class="card-body">
               <h5 class="card-title">${pin.title}</h5>
               <p class="card-text">${pin.article}</p>
-              <button id="${pin.board}" class="btn btn-outline-warning delete-pin"><i class="fas fa-trash-alt"></i></button>
-              <button class="btn btn-outline-warning move-pin"><i class="fas fa-people-carry" data-board="${pin.boardId}"></i></button>
+              <button id="${pin.board}" class="btn btn-outline-info delete-pin"><i class="fas fa-trash-alt"></i></button>
+              <button class="btn btn-outline-info move-pin"><i class="fas fa-people-carry" data-board="${pin.boardId}"></i></button>
               <div id="${pin.id}dropDown"></div>
             </div>
           </div>
