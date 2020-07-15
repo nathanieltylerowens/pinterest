@@ -15,12 +15,16 @@ The sixth exercise at NSS. The objective of the exercise was to create a site si
 1. Project has responsive design.
 
 ## Screenshots:
-##### Welcome View:
-![Main View](images/sortinghat1.jpg)
-##### Sorting Window w/ Button View:
-![Main View](images/sortinghat2.jpg)
-##### Single Card w/ Button View:
-![Main View](images/sortinghat3.jpg)
+##### Login View:
+![Mainview](screenshots/penterest1.jpg)
+##### Board View:
+![Mainview](screenshots/penterest.jpg)
+##### Create New Board View:
+![Mainview](screenshots/penterest2.jpg)
+##### Pins View:
+![Mainview](screenshots/penterest3.jpg)
+##### Create New Pin View:
+![Mainview](screenshots/penterest4.jpg)
 
 ## How To Run:
 >1. Clone down this repo.
